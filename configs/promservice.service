@@ -1,0 +1,12 @@
+[Unit]
+Description=prometheus service
+
+[Service]
+ExecStart=/home/server1/prometheus-2.31.1.linux-amd64/prometheus \
+           --config.file=/home/server1/prometheus-2.31.1.linux-amd64/prometheus.yml \
+           --web.config.file=/home/server1/prometheus-2.31.1.linux-amd64/web.yaml
+        
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
